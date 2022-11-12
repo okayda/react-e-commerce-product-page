@@ -1,0 +1,38 @@
+.header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem 1.6rem;
+}
+.header__logoMenu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.header__logoMenu--menu, .header__logoMenu--logo {
+  line-height: 1;
+}
+.header__logoMenu--menu img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.header__logoMenu--logo img {
+  width: 100%;
+  height: auto;
+}
+.header__cartAccount {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.header__cartAccount--cart, .header__cartAccount--account {
+  line-height: 1;
+}
+.header__cartAccount--cart img {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.header__cartAccount--account img {
+  width: 3rem;
+  height: 3rem;
+}

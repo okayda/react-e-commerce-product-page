@@ -1,0 +1,48 @@
+.header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem 1.6rem;
+
+  &__logoMenu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    &--menu,
+    &--logo {
+      line-height: 1;
+    }
+
+    &--menu img {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    &--logo img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__cartAccount {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    &--cart,
+    &--account {
+      line-height: 1;
+    }
+
+    &--cart img {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+
+    &--account img {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
