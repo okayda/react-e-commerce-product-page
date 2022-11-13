@@ -22,7 +22,7 @@ Users should be able to:
 
 - Mobile-first (Layout)
 - React-JS
-- Swiper-JS
+- Swiper-JSt
 - SASS/SCSS
 - CSS-Modules
 - BEM Methodology

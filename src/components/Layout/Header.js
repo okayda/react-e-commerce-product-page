@@ -8,21 +8,23 @@ const Header = function () {
   return (
     <>
       <div className={style.header}>
-        <div className={style.header__logoMenu}>
-          <div className={style["header__logoMenu--menu"]}>
-            <img src={iconMenu} alt="" />
+        <div className={style.header__wrapper}>
+          <div className={style.header__logoMenu}>
+            <div className={style["header__logoMenu--menu"]}>
+              <img src={iconMenu} alt="" />
+            </div>
+            <div className={style["header__logoMenu--logo"]}>
+              <img src={Logo} alt="" />
+            </div>
           </div>
-          <div className={style["header__logoMenu--logo"]}>
-            <img src={Logo} alt="" />
-          </div>
-        </div>
 
-        <div className={style.header__cartAccount}>
-          <div className={style["header__cartAccount--cart"]}>
-            <img src={iconCart} alt="" />
-          </div>
-          <div className={style["header__cartAccount--account"]}>
-            <img src={avatar} alt="" />
+          <div className={style.header__cartAccount}>
+            <div className={style["header__cartAccount--cart"]}>
+              <img src={iconCart} alt="" />
+            </div>
+            <div className={style["header__cartAccount--account"]}>
+              <img src={avatar} alt="" />
+            </div>
           </div>
         </div>
       </div>
