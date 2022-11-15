@@ -1,22 +1,27 @@
 .lgSwiper {
   max-height: 330px;
   width: 100%;
+  margin-bottom: 1rem;
+  /*   
+  border-radius: 15px;
+  overflow: hidden; */
 }
 
 .smSwiper {
   height: 20%;
   box-sizing: border-box;
-  padding: 10px 0;
 }
 
 .smSwiper .swiper-slide {
   width: 25%;
   height: 100%;
-  opacity: 0.4;
+  border-radius: 9px;
+  overflow: hidden;
+  /* opacity: 0.4; */
 }
 
 .smSwiper .swiper-slide-thumb-active {
-  opacity: 1;
+  opacity: 0.4;
 }
 
 .swiper-slide img {
