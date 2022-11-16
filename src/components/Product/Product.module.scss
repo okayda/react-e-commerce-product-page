@@ -1,14 +1,28 @@
 @import "../../scss/variables";
+@import "../../scss/mixin";
 
 .product {
-  max-width: 440px;
+  max-width: 44rem;
   margin: 0 auto;
+
+  @include desktop-layout() {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 90rem;
+    padding: 8rem 0 6rem;
+  }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 1rem 2rem 4rem;
+
+    @include desktop-layout() {
+      padding: 0;
+    }
   }
 
   &__content {
@@ -20,13 +34,17 @@
   &__brand {
     letter-spacing: 0.3px;
     color: $orange;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 700;
+
+    @include desktop-layout() {
+      font-size: 1.7rem;
+    }
   }
 
   &__title {
-    font-size: 2.8rem;
+    font-size: 3.6rem;
   }
 
   &__description {

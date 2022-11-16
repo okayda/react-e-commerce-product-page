@@ -76,7 +76,7 @@ const ProductSlides = function () {
   };
 
   return (
-    <>
+    <div className="swiper-container">
       <Swiper {...lgSwiperObj}>
         {lgImgs}
         <button className="swiper-button-next">
@@ -87,7 +87,7 @@ const ProductSlides = function () {
         </button>
       </Swiper>
       <Swiper {...smSwiperObj}>{width >= 600 && smImgs}</Swiper>
-    </>
+    </div>
   );
 };
 
