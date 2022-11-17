@@ -1,7 +1,7 @@
 import ProductSlides from "./ProductSlides";
 import ProductContent from "./ProductContent";
 
-import style from "./Product.module.css";
+import style from "./Product.module.scss";
 
 const Product = function () {
   return (

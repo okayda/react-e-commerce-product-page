@@ -1,4 +1,6 @@
+@use "./scss";
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -12,7 +14,7 @@ html {
 }
 
 body {
-  color: hsl(0deg, 0%, 20%);
+  color: scss.$dark;
   box-sizing: border-box;
   font-family: "Kumbh Sans", sans-serif;
 }

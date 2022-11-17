@@ -1,11 +1,14 @@
-@import "../../scss/variables";
-@import "../../scss/mixin";
+@use "../../scss";
 
 .product {
   max-width: 44rem;
   margin: 0 auto;
 
-  @include desktop-layout() {
+  @include scss.tablet-layout() {
+    padding: 4rem 0;
+  }
+
+  @include scss.desktop-layout() {
     display: grid;
     gap: 4rem;
     grid-template-columns: 1fr 1fr;
@@ -20,7 +23,11 @@
     gap: 2rem;
     padding: 1rem 2rem 4rem;
 
-    @include desktop-layout() {
+    @include scss.tablet-layout() {
+      padding: 6rem 2rem;
+    }
+
+    @include scss.desktop-layout() {
       padding: 0;
     }
   }
@@ -33,12 +40,12 @@
 
   &__brand {
     letter-spacing: 0.3px;
-    color: $orange;
+    color: scss.$orange;
     font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 700;
 
-    @include desktop-layout() {
+    @include scss.desktop-layout() {
       font-size: 1.7rem;
     }
   }
@@ -48,7 +55,7 @@
   }
 
   &__description {
-    color: $dark-grayish-blue;
+    color: scss.$dark-grayish-blue;
     font-size: 1.6rem;
     line-height: 1.4;
   }

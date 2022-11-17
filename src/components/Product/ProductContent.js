@@ -1,7 +1,8 @@
+import style from "./Product.module.scss";
 import ProductDeal from "./ProductDeal";
-import style from "./Product.module.css";
-
 const ProductContent = function () {
+  console.log(style);
+
   return (
     <div className={style.product__wrapper}>
       <div className={style.product__content}>

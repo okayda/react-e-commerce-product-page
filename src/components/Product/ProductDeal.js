@@ -2,7 +2,7 @@ import plusIcon from "../../assets/icon-plus.svg";
 import minusIcon from "../../assets/icon-minus.svg";
 import cartIcon from "../../assets/icon-cart-white.svg";
 
-import style from "./ProductDeal.module.css";
+import style from "./ProductDeal.module.scss";
 
 const ProductDeal = function () {
   return (
