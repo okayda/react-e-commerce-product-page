@@ -1,0 +1,41 @@
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartItem-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 6px;
+}
+
+.cartItem-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.cartItem-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cartItem-content span {
+  font-size: 1.45rem;
+}
+
+.cartItem-order-prices {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.cartItem-order-price {
+  font-weight: 700;
+}
+
+.cartItem-icon {
+  width: 1.5rem;
+  height: 1.8rem;
+}

@@ -8,8 +8,19 @@
   max-height: 330px;
   width: 100%;
   margin-bottom: 1rem;
-  border-radius: 12px;
   overflow: hidden;
+}
+
+@include scss.tablet-layout {
+  .lgSwiper {
+    border-radius: 12px;
+  }
+}
+
+@include scss.desktop-layout() {
+  .lgSwiper {
+    border-radius: 12px;
+  }
 }
 
 .smSwiper {

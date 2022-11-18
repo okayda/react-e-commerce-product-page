@@ -5,10 +5,10 @@ import style from "./Product.module.scss";
 
 const Product = function () {
   return (
-    <section className={style.product}>
+    <article className={style.product}>
       <ProductSlides />
       <ProductContent />
-    </section>
+    </article>
   );
 };
 
