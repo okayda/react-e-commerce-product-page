@@ -7,7 +7,7 @@ import "./App.scss";
 function App() {
   return (
     <>
-      {/* <Cart /> */}
+      <Cart />
       <Header />
       <Product dataContent={dataContent} dataImgs={dataImgs} />
     </>

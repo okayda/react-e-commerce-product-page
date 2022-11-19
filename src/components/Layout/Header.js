@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { CartContext } from "../../store/CartProvider";
+
 import style from "./LayoutStyles/Header.module.scss";
 
 import HeaderLinks from "./HeaderLinks";
@@ -8,6 +11,12 @@ import iconCart from "../../assets/icon-cart.svg";
 import avatar from "../../assets/image-avatar.png";
 
 const Header = function () {
+  const {
+    myCart: { carts },
+  } = useContext(CartContext);
+
+  const countCarts = carts.reduce((prev, cur) => prev + cur.piece, 0);
+
   return (
     <>
       <div className={style.header}>
@@ -26,6 +35,7 @@ const Header = function () {
           <div className={style.header__cartAccount}>
             <div className={style["header__cartAccount--cart"]}>
               <img src={iconCart} alt="" />
+              {countCarts > 0 ? <span>{countCarts}</span> : ""}
             </div>
             <div className={style["header__cartAccount--account"]}>
               <img src={avatar} alt="" />

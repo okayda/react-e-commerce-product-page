@@ -14,6 +14,8 @@ const reducer = function (state, action) {
           return {
             ...cartItem,
             piece: (cartItem.piece += action.payload.piece),
+            salePrice: action.payload.salePrice,
+            oldPrice: action.payload.oldPrice,
           };
         }
       });

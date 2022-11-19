@@ -1,13 +1,15 @@
 export const dataContent = {
   id: `shoe17D`,
-
+  productTitle: `Autumn Limited Edition...`,
+  productName: `Pair shoes`,
   company: `sneaker company`,
-
   title: `Fall Limited Edition Sneakers`,
-
   description: `These low-profile sneakers are your perfect casual wear companion.
     Featuring a durable rubber outer sole, they'll withstand everthing the
     weather can offer.`,
+  percent: "50%",
+  salePrice: 125.0,
+  oldPrice: 250.0,
 };
 
 export const dataImgs = {

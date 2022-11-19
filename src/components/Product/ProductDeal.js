@@ -7,7 +7,7 @@ import cartIcon from "../../assets/icon-cart-white.svg";
 
 import style from "./ProductStyles/ProductDeal.module.scss";
 
-const ProductDeal = function (props) {
+const ProductDeal = function ({ data }) {
   const {
     myCart: { dispatch },
   } = useContext(CartContext);
@@ -21,7 +21,14 @@ const ProductDeal = function (props) {
 
     dispatch({
       type: "ADD",
-      payload: { id: props.id, productName: "Pair shoes", piece: count },
+      payload: {
+        id: data.id,
+        productTitle: data.productTitle,
+        productName: data.productName,
+        piece: count,
+        salePrice: data.salePrice,
+        oldPrice: data.oldPrice,
+      },
     });
     setCount(0);
   };
@@ -40,12 +47,12 @@ const ProductDeal = function (props) {
     <div className={style.productDeal}>
       <div className={style.productDeal__prices}>
         <div className={style.productDeal__salePrice}>
-          <span className={style.productDeal__sale}>$125.00</span>
-          <span className={style.productDeal__percent}>50%</span>
+          <span className={style.productDeal__sale}>${data.salePrice}</span>
+          <span className={style.productDeal__percent}>{data.percent}</span>
         </div>
 
         <span className={style.productDeal__oldPrice}>
-          <del>$250.00</del>
+          <del>${data.oldPrice}</del>
         </span>
       </div>
 

@@ -9,7 +9,7 @@ const ProductContent = function ({ data }) {
         <p className={style.product__description}>{data.description}</p>
       </div>
 
-      <ProductDeal id={data.id} />
+      <ProductDeal data={data} />
     </div>
   );
 };

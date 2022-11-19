@@ -21,4 +21,13 @@ body {
 
 #cart-container {
   position: relative;
+  margin: 0 auto;
+
+  @include scss.tablet-layout {
+    max-width: 80rem;
+  }
+
+  @include scss.desktop-layout {
+    max-width: 100rem;
+  }
 }
