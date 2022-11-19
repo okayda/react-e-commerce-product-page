@@ -1,4 +1,4 @@
-import style from "./Cart.module.scss";
+import style from "./CartStyles/Cart.module.scss";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 

@@ -1,7 +1,10 @@
 export const dataContent = {
   id: `shoe17D`,
+
   company: `sneaker company`,
+
   title: `Fall Limited Edition Sneakers`,
+
   description: `These low-profile sneakers are your perfect casual wear companion.
     Featuring a durable rubber outer sole, they'll withstand everthing the
     weather can offer.`,

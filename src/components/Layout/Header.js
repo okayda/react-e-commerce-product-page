@@ -1,4 +1,4 @@
-import style from "./Header.module.scss";
+import style from "./LayoutStyles/Header.module.scss";
 
 import HeaderLinks from "./HeaderLinks";
 

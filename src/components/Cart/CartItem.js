@@ -1,6 +1,6 @@
 import imgProduct from "../../assets/image-product-1-thumbnail.jpg";
 import deleteIcon from "../../assets/icon-delete.svg";
-import "./cartItem.scss";
+import "./CartStyles/cartItem.scss";
 
 const CartItem = function () {
   return (
