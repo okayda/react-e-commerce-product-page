@@ -1,32 +1,21 @@
 import { useState, useEffect } from "react";
-// Import Swiper React components
+// Imported Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import lg1 from "../../assets/image-product-1.jpg";
-import lg2 from "../../assets/image-product-2.jpg";
-import lg3 from "../../assets/image-product-3.jpg";
-import lg4 from "../../assets/image-product-4.jpg";
-
-import sm1 from "../../assets/image-product-1-thumbnail.jpg";
-import sm2 from "../../assets/image-product-2-thumbnail.jpg";
-import sm3 from "../../assets/image-product-3-thumbnail.jpg";
-import sm4 from "../../assets/image-product-4-thumbnail.jpg";
 
 import nextIcon from "../../assets/icon-next.svg";
 import prevIcon from "../../assets/icon-previous.svg";
 
-// Import Swiper styles
+// Imported Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import "./ProductSlides.scss";
+import "./ProductStyles/ProductSlides.scss";
 
-// import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
-const ProductSlides = function () {
+const ProductSlides = function ({ data }) {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -36,17 +25,19 @@ const ProductSlides = function () {
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  const lgImgs = [lg1, lg2, lg3, lg4].map((img, i) => (
+  const lgImgs = data.largePics.map((img, i) => (
     <SwiperSlide key={i}>
-      <img src={img} alt="Product" />
+      <img src={require(`../../assets/${img}`)} alt="Product" />
     </SwiperSlide>
   ));
 
-  const smImgs = [sm1, sm2, sm3, sm4].map((img, i) => (
-    <SwiperSlide key={i}>
-      <img src={img} alt="Product" />
-    </SwiperSlide>
-  ));
+  const smImgs = data.smallPics.map((img, i) => {
+    return (
+      <SwiperSlide key={i}>
+        <img src={require(`../../assets/${img}`)} alt="Product" />
+      </SwiperSlide>
+    );
+  });
 
   const lgSwiperObj = {
     style: {

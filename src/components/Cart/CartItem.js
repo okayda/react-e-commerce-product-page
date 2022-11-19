@@ -15,7 +15,7 @@ const CartItem = function () {
             <span className="cartItem-price">$125.00</span>
             <span>x</span>
             <span>1</span>
-            <span class="cartItem-order-price">$375.00</span>
+            <span className="cartItem-order-price">$375.00</span>
           </div>
         </div>
       </div>
