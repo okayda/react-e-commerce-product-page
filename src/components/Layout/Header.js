@@ -10,7 +10,7 @@ import iconMenu from "../../assets/icon-menu.svg";
 import iconCart from "../../assets/icon-cart.svg";
 import avatar from "../../assets/image-avatar.png";
 
-const Header = function () {
+const Header = function ({ onCartClick }) {
   const {
     myCart: { carts },
   } = useContext(CartContext);
@@ -34,9 +34,15 @@ const Header = function () {
 
           <div className={style.header__cartAccount}>
             <div className={style["header__cartAccount--cart"]}>
-              <img src={iconCart} alt="" />
-              {countCarts > 0 ? <span>{countCarts}</span> : ""}
+              <button
+                className={style["header__cartAccount--buttonCart"]}
+                onClick={onCartClick}
+              >
+                <img src={iconCart} alt="" />
+                {countCarts > 0 ? <span>{countCarts}</span> : ""}
+              </button>
             </div>
+
             <div className={style["header__cartAccount--account"]}>
               <img src={avatar} alt="" />
             </div>

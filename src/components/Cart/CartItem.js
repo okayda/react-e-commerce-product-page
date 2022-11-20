@@ -2,8 +2,10 @@ import imgProduct from "../../assets/image-product-1-thumbnail.jpg";
 import deleteIcon from "../../assets/icon-delete.svg";
 import "./CartStyles/cartItem.scss";
 
-const CartItem = function ({ data }) {
-  console.log(typeof data.salePrice);
+const CartItem = function ({ data, dispatch }) {
+  const decrease = function () {
+    dispatch({ type: "REMOVE", payload: { id: data.id } });
+  };
 
   return (
     <li className="cartItem">
@@ -11,7 +13,7 @@ const CartItem = function ({ data }) {
         <img src={imgProduct} className="cartItem-img" alt="" />
 
         <div className="cartItem-content">
-          <span>Autumn Limited Edition...</span>
+          <span>{data.productTitle}</span>
 
           <div className="cartItem-order-prices">
             <span className="cartItem-price">${data.salePrice}</span>
@@ -23,7 +25,10 @@ const CartItem = function ({ data }) {
           </div>
         </div>
       </div>
-      <img src={deleteIcon} className="cartItem-icon" alt="" />
+
+      <button className="cartItem-button" onClick={decrease}>
+        <img src={deleteIcon} className="cartItem-icon" alt="" />
+      </button>
     </li>
   );
 };

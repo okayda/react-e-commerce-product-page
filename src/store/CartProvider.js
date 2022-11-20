@@ -10,18 +10,32 @@ const reducer = function (state, action) {
     // It will increment the existed product in the cart
     if (state.length > 0)
       existed = state.map((cartItem) => {
+        console.log(cartItem.id, action.payload.id);
         if (cartItem.id === action.payload.id) {
           return {
-            ...cartItem,
+            ...action.payload,
             piece: (cartItem.piece += action.payload.piece),
-            salePrice: action.payload.salePrice,
-            oldPrice: action.payload.oldPrice,
           };
         }
       });
 
     // It will add the new product in the cart
     return existed ? existed : state.concat(action.payload);
+  }
+
+  if (action.type === "REMOVE") {
+    return state.filter((cartItem) => {
+      if (cartItem.piece >= 2 && cartItem.id === action.payload.id) {
+        return {
+          ...cartItem,
+          piece: (cartItem.piece -= 1),
+        };
+      }
+
+      // will return different cart item &
+      // will remove the deleted cart item. if the piece become 0
+      if (cartItem.id !== action.payload.id) return cartItem;
+    });
   }
 };
 

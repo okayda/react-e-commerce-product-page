@@ -36,6 +36,14 @@
 }
 
 .cartItem-icon {
+  cursor: pointer;
   width: 1.5rem;
   height: 1.8rem;
+}
+
+.cartItem-button {
+  border: none;
+  background-color: transparent;
+  line-height: 0;
+  font-size: 2rem;
 }

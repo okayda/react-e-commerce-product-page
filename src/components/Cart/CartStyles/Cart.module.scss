@@ -36,22 +36,45 @@
     }
   }
 
-  &__title {
-    font-size: 1.6rem;
+  &__titleContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 1.6rem;
     border-bottom: 1px solid scss.$grayish-blue;
+
+    span {
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      line-height: 0;
+    }
   }
 
   &__content {
-    padding: 1.6rem;
+    padding: 0 1.6rem 1.6rem;
+  }
+
+  &__empty {
+    display: block;
+    text-align: center;
+    font-size: 1.65rem;
+    font-weight: 700;
+    padding: 5.55rem 0;
   }
 
   &__cartList {
     list-style: none;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
   }
 
   &__button {
+    cursor: pointer;
     width: 100%;
     border-radius: 6px;
     font-size: 1.5rem;
@@ -59,5 +82,9 @@
     background-color: scss.$orange;
     color: scss.$light;
     padding: 1.2rem 0;
+
+    &:hover {
+      background-color: lighten(scss.$orange, 10%);
+    }
   }
 }

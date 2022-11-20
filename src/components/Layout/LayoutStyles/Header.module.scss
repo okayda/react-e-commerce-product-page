@@ -72,6 +72,33 @@
         text-decoration: none;
       }
 
+      a::before {
+        content: "";
+        width: 0;
+        height: 4px;
+        background-color: scss.$orange;
+
+        transform: translateX(-50%);
+        transition: all 0.4s;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      a:hover,
+      a:active {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          left: 50%;
+          bottom: -4rem;
+
+          visibility: visible;
+          width: 100%;
+          opacity: 1;
+        }
+      }
+
       @include scss.tablet-layout() {
         display: flex;
         gap: 1.6rem;
@@ -95,10 +122,13 @@
     }
 
     &--cart {
-      cursor: pointer;
-      position: relative;
+      button {
+        cursor: pointer;
+        position: relative;
+      }
 
       span {
+        display: inline-block;
         position: absolute;
         top: -0.6rem;
         right: -1.4rem;
@@ -113,6 +143,12 @@
         width: 2.2rem;
         height: 2.2rem;
       }
+    }
+
+    &--buttonCart {
+      line-height: 0.8;
+      background-color: transparent;
+      border: none;
     }
 
     &--account {
