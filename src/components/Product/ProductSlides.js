@@ -15,7 +15,16 @@ import "./ProductStyles/ProductSlides.scss";
 
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
-const ProductSlides = function ({ data }) {
+const ProductSlides = function ({
+  data,
+
+  // only for backdrop product slides
+  onLargeSlides,
+  largeDisplayPic,
+  smallDisplayPic,
+  smallPicGap,
+  showLargeSlides,
+}) {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -26,7 +35,7 @@ const ProductSlides = function ({ data }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const lgImgs = data.largePics.map((img, i) => (
-    <SwiperSlide key={i}>
+    <SwiperSlide key={i} onClick={onLargeSlides}>
       <img src={require(`../../assets/${img}`)} alt="Product" />
     </SwiperSlide>
   ));
@@ -39,6 +48,14 @@ const ProductSlides = function ({ data }) {
     );
   });
 
+  // only for without backdrop slides & for larger slides
+  // with backdrop.. alternate class name
+  const alterArrowClass = function (str) {
+    return showLargeSlides
+      ? `swiper-large-slides-${str}`
+      : `swiper-button-${str}`;
+  };
+
   const lgSwiperObj = {
     style: {
       "--swiper-navigation-color": "#fff",
@@ -47,37 +64,40 @@ const ProductSlides = function ({ data }) {
     loop: true,
     spaceBetween: 10,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: `.${alterArrowClass("next")}`,
+      prevEl: `.${alterArrowClass("prev")}`,
     },
     thumbs: {
       swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
     },
     modules: [FreeMode, Navigation, Thumbs],
-    className: "lgSwiper",
+
+    className: `lgSwiper ${largeDisplayPic}`,
   };
 
   const smSwiperObj = {
     onSwiper: setThumbsSwiper,
-    spaceBetween: 10,
+    spaceBetween: smallPicGap ? smallPicGap : 10,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
     modules: [FreeMode, Navigation, Thumbs],
-    className: "smSwiper",
+
+    className: `smSwiper ${smallDisplayPic}`,
   };
 
   return (
     <div className="swiper-container">
       <Swiper {...lgSwiperObj}>
         {lgImgs}
-        <button className="swiper-button-next">
+        <button className={alterArrowClass("next")}>
           <img src={nextIcon} alt="" />
         </button>
-        <button className="swiper-button-prev">
+        <button className={alterArrowClass("prev")}>
           <img src={prevIcon} alt="" />
         </button>
       </Swiper>
+
       <Swiper {...smSwiperObj}>{width >= 600 && smImgs}</Swiper>
     </div>
   );

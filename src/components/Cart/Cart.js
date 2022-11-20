@@ -28,7 +28,7 @@ const Cart = function ({ onCartClick }) {
   );
 
   return (
-    <Modal targetClass="cart-container">
+    <Modal targetContainer="cart-container">
       <div className={style.cart}>
         <div className={style.cart__wrapper}>
           <div className={style.cart__titleContent}>
