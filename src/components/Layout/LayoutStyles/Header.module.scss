@@ -37,6 +37,11 @@
     }
 
     &--menu {
+      button {
+        background-color: transparent;
+        border: none;
+      }
+
       @include scss.tablet-layout() {
         display: none;
       }

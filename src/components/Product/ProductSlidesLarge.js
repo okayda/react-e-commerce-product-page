@@ -12,10 +12,11 @@ const ProductSlidesLarge = function ({
   setShowLargeSlides,
 }) {
   const hideLargeSlides = function (e) {
+    e.stopPropagation();
     const targetClass = e.target.className;
     if (
-      targetClass === "backdrop" ||
-      targetClass === "large-slide-backdrop-close"
+      targetClass.includes("backdrop") ||
+      targetClass.includes("large-slides-close-icon")
     )
       setShowLargeSlides(false);
   };

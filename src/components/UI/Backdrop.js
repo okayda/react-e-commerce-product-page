@@ -2,7 +2,10 @@ import "./Backdrop.css";
 
 const Backdrop = function (props) {
   return (
-    <div className="backdrop" onClick={props.onHide}>
+    <div
+      className={`backdrop ${props.addClass ? props.addClass : ""}`}
+      onClick={props.onHide}
+    >
       {props.children}
     </div>
   );
