@@ -22,12 +22,8 @@ const ProductDeal = function ({ data }) {
     dispatch({
       type: "ADD",
       payload: {
-        id: data.id,
-        productTitle: data.productTitle,
-        productName: data.productName,
+        ...data,
         piece: count,
-        salePrice: data.salePrice,
-        oldPrice: data.oldPrice,
       },
     });
     setCount(0);

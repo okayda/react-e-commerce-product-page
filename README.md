@@ -1,5 +1,7 @@
 # Frontend Mentor - E-commerce product page solution
 
+![](./screenshot.jpg)
+
 This is my solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6)
 
 ## The challenge
@@ -16,15 +18,14 @@ Users should be able to:
 ## Links
 
 - [Solution URL](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6)
-- [Live Site URL]()
+- [Live Site URL](https://jhon-okayda-e-commerce-product-page.netlify.app/)
 
 ## Built with
 
 - Mobile-first (Layout)
 - React-JS
-- Swiper-JSt
-- SASS/SCSS
-- CSS-Modules
+- Swiper-JS
+- SASS/SCSS Modules
 - BEM Methodology
 
 ## Author

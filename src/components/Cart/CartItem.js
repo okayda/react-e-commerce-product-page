@@ -1,4 +1,3 @@
-import imgProduct from "../../assets/image-product-1-thumbnail.jpg";
 import deleteIcon from "../../assets/icon-delete.svg";
 import "./CartStyles/cartItem.scss";
 
@@ -6,11 +5,15 @@ const CartItem = function ({ data, dispatch }) {
   const decrease = function () {
     dispatch({ type: "REMOVE", payload: { id: data.id } });
   };
-
+  console.log(data.productPic);
   return (
     <li className="cartItem">
       <div className="cartItem-content-wrapper">
-        <img src={imgProduct} className="cartItem-img" alt="" />
+        <img
+          src={require(`../../assets/${data.productPic}`)}
+          className="cartItem-img"
+          alt=""
+        />
 
         <div className="cartItem-content">
           <span>{data.productTitle}</span>

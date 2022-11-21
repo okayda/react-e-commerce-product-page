@@ -9,3 +9,9 @@
     @content;
   }
 }
+
+@mixin columnGap($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}

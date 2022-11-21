@@ -1,3 +1,5 @@
+@use "../../../scss";
+
 .cartItem {
   display: flex;
   justify-content: space-between;
@@ -17,9 +19,7 @@
 }
 
 .cartItem-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  @include scss.columnGap(0.4rem);
 }
 
 .cartItem-content span {

@@ -1,9 +1,7 @@
 @use "../../../scss";
 
 .productDeal {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  @include scss.columnGap(2rem);
 
   @include scss.desktop-layout() {
     gap: 3.2rem;
@@ -15,9 +13,9 @@
     align-items: center;
 
     @include scss.desktop-layout() {
-      flex-direction: column;
+      @include scss.columnGap(1rem);
+
       align-items: flex-start;
-      gap: 1rem;
     }
   }
 
@@ -48,11 +46,8 @@
   }
 
   //   Form styles
-
   &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    @include scss.columnGap(1rem);
 
     @include scss.desktop-layout() {
       flex-direction: row;

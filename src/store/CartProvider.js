@@ -10,7 +10,6 @@ const reducer = function (state, action) {
     // It will increment the existed product in the cart
     if (state.length > 0)
       existed = state.map((cartItem) => {
-        console.log(cartItem.id, action.payload.id);
         if (cartItem.id === action.payload.id) {
           return {
             ...action.payload,

@@ -20,12 +20,12 @@
   transition: all 0.4s;
   transform: translateX(-100%);
   width: 55%;
+  z-index: 40;
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
+    @include scss.columnGap(4.6rem);
+
     align-content: flex-start;
-    gap: 4.6rem;
     width: 100%;
     height: 100vh;
     background-color: scss.$light;
@@ -44,10 +44,9 @@
   }
 
   &__list {
+    @include scss.columnGap(1.8rem);
+
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
 
     a:link,
     a:visited {

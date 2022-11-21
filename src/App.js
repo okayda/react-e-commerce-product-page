@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Header from "./components/Layout/Header";
 import { dataContent, dataImgs } from "./components/Product/Data/ShoesData";
 
+import Header from "./components/Layout/Header";
 import Product from "./components/Product/Product";
+
 import Cart from "./components/Cart/Cart";
 import MobileMenu from "./components/Layout/MobileMenu";
 

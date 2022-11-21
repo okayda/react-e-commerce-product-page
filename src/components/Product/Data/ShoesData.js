@@ -10,6 +10,7 @@ export const dataContent = {
   percent: "50%",
   salePrice: 125.0,
   oldPrice: 250.0,
+  productPic: "image-product-1-thumbnail.jpg",
 };
 
 export const dataImgs = {
