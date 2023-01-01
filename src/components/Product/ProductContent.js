@@ -1,5 +1,6 @@
 import style from "./ProductStyles/Product.module.scss";
 import ProductDeal from "./ProductDeal";
+
 const ProductContent = function ({ data }) {
   return (
     <div className={style.product__wrapper}>

@@ -24,6 +24,7 @@ Users should be able to:
 
 - Mobile-first (Layout)
 - React-JS
+- Redux/toolkit
 - Swiper-JS
 - SASS/SCSS Modules
 - BEM Methodology

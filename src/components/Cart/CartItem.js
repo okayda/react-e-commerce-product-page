@@ -1,11 +1,16 @@
+import { useDispatch } from "react-redux";
+import { cartMapActions } from "../../store/cart-slice";
+
 import deleteIcon from "../../assets/icon-delete.svg";
 import "./CartStyles/cartItem.scss";
 
-const CartItem = function ({ data, dispatch }) {
+const CartItem = function ({ data }) {
+  const dispatch = useDispatch();
+
   const decrease = function () {
-    dispatch({ type: "REMOVE", payload: { id: data.id } });
+    dispatch(cartMapActions.decrease({ id: data.id }));
   };
-  console.log(data.productPic);
+
   return (
     <li className="cartItem">
       <div className="cartItem-content-wrapper">

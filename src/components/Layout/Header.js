@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom";
-import { useContext } from "react";
-import { CartContext } from "../../store/CartProvider";
+import { useSelector } from "react-redux";
 
 import style from "./LayoutStyles/Header.module.scss";
 
@@ -12,11 +11,9 @@ import iconCart from "../../assets/icon-cart.svg";
 import avatar from "../../assets/image-avatar.png";
 
 const Header = function ({ onCartClick, displayMobileNav }) {
-  const {
-    myCart: { carts },
-  } = useContext(CartContext);
+  const cartsData = useSelector((state) => state.carts);
 
-  const countCarts = carts.reduce((prev, cur) => prev + cur.piece, 0);
+  const countCarts = cartsData.reduce((prev, cur) => prev + cur.piece, 0);
 
   const Element = (
     <nav className={style.header}>

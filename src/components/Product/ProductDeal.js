@@ -1,5 +1,7 @@
-import { useState, useContext } from "react";
-import { CartContext } from "../../store/CartProvider";
+import { useState } from "react";
+
+import { useDispatch } from "react-redux";
+import { cartMapActions } from "../../store/cart-slice";
 
 import plusIcon from "../../assets/icon-plus.svg";
 import minusIcon from "../../assets/icon-minus.svg";
@@ -8,25 +10,23 @@ import cartIcon from "../../assets/icon-cart-white.svg";
 import style from "./ProductStyles/ProductDeal.module.scss";
 
 const ProductDeal = function ({ data }) {
-  const {
-    myCart: { dispatch },
-  } = useContext(CartContext);
+  const dispatch = useDispatch();
+
   const [count, setCount] = useState(0);
 
   const formSubmit = function (e) {
     e.preventDefault();
 
     const submitter = e.nativeEvent.submitter.name;
-    if (submitter !== "add" || !count) return;
-
-    dispatch({
-      type: "ADD",
-      payload: {
-        ...data,
-        piece: count,
-      },
-    });
-    setCount(0);
+    if (submitter === "add" && count > 0) {
+      dispatch(
+        cartMapActions.add({
+          ...data,
+          piece: count,
+        })
+      );
+      setCount(0);
+    }
   };
 
   const increaseCount = function () {

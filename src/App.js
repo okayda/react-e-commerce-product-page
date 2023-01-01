@@ -1,4 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { getData, sendData } from "./store/cart-action";
+
 import { dataContent, dataImgs } from "./components/Product/Data/ShoesData";
 
 import Header from "./components/Layout/Header";
@@ -9,7 +14,13 @@ import MobileMenu from "./components/Layout/MobileMenu";
 
 import "./App.scss";
 
+let initial = true;
+
 function App() {
+  const dispatch = useDispatch();
+
+  const cartData = useSelector((state) => state.carts);
+
   const [activeCart, setActiveCart] = useState(false);
   const displayCart = function (e) {
     e.stopPropagation();
@@ -21,6 +32,19 @@ function App() {
     e.stopPropagation();
     setActiveMobileNav((prev) => (prev ? !prev : !prev));
   };
+
+  useEffect(() => {
+    dispatch(getData());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (initial) {
+      initial = false;
+      return;
+    }
+
+    dispatch(sendData(cartData));
+  }, [cartData, dispatch]);
 
   return (
     <>

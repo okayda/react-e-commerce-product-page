@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { CartContext } from "../../store/CartProvider";
+import { useSelector } from "react-redux";
 
 import style from "./CartStyles/Cart.module.scss";
 import Modal from "../UI/Modal";
@@ -8,15 +7,13 @@ import CartItem from "./CartItem";
 import closeIcon from "../../assets/icon-close.svg";
 
 const Cart = function ({ onCartClick }) {
-  const {
-    myCart: { carts, dispatch },
-  } = useContext(CartContext);
+  const cartData = useSelector((state) => state.carts);
 
   const ShowItems = (
     <>
       <ul className={style.cart__cartList}>
-        {carts.map((cart, i) => (
-          <CartItem key={i} data={cart} dispatch={dispatch} />
+        {cartData.map((cart, i) => (
+          <CartItem key={i} data={cart} />
         ))}
       </ul>
       <button className={style.cart__button}>Checkout</button>
@@ -38,7 +35,7 @@ const Cart = function ({ onCartClick }) {
             </button>
           </div>
           <div className={style.cart__content}>
-            {carts.length > 0 ? ShowItems : ShowEmpty}
+            {cartData.length > 0 ? ShowItems : ShowEmpty}
           </div>
         </div>
       </div>
