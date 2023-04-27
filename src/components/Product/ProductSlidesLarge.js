@@ -38,7 +38,7 @@ const ProductSlidesLarge = function ({
             showLargeSlides={showLargeSlides}
             largeDisplayPic="large-display-picture"
             smallDisplayPic="small-display-picture"
-            smallPicGap={25}
+            smallPicGap={20}
           />
         </div>
       </Backdrop>
